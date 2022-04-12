@@ -39,7 +39,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Whim.ooo
+            Whim
           </a>
         </nav>
         <div className="container-fluid mt-5">
