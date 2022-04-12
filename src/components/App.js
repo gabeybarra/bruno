@@ -3,17 +3,43 @@ import logo from '../logo.png';
 import './App.css';
 
 class App extends Component {
+	
+	constructor(props){
+		super(props);
+		this.state = {
+			buffer: null
+		};
+	}
+	
+	captureFile = (event) => {
+		event.preventDefault()
+		//Process File for IPFS...
+		const file = event.target.files[0]
+		const reader = new window.FileReader()
+			console.log(event.target.files)
+		reader.readAsArrayBuffer(file)
+		reader.onloadend = () => {
+			this.setState({ buffer: Buffer(reader.result)})
+			console.log('buffer', Buffer(reader.result))
+		}
+	}
+	
+	onSubmit = (event) => {
+		event.preventDefault()
+		console.log("Submitting the form...")
+				}
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
+            href="https://app.clickup.com/25601387/home"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dapp University
+            Whim.ooo
           </a>
         </nav>
         <div className="container-fluid mt-5">
@@ -27,18 +53,13 @@ class App extends Component {
                 >
                   <img src={logo} className="App-logo" alt="logo" />
                 </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
+				<p>&nbsp;</p>
+				<h2>Change Media</h2>
+				<form onSubmit={this.onSubmit} >
+					<input type='file' onChange={this.captureFile} />
+					<input type='submit' />
+				</form>
+
               </div>
             </main>
           </div>
