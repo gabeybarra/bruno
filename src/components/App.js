@@ -4,7 +4,7 @@ import './App.css';
 
 const fleek = require('@fleekhq/fleek-storage-js')
 const ipfsClient = require('ipfs-http-client')
-const ipfs = ipfsClient({ host: 'https://storageapi2.fleek.co/79346f15-da69-4d37-9c98-8df2ab07ed6d-bucket', port: 5001, protocol: 'https'})
+const ipfs = ipfsClient({ host: 'storageapi2.fleek.co/79346f15-da69-4d37-9c98-8df2ab07ed6d-bucket'})
 
 class App extends Component {
 	
