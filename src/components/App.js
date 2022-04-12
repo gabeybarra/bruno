@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import logo from '../logo.png';
 import './App.css';
 
+const fleek = require('@fleekhq/fleek-storage-js')
+const ipfsClient = require('ipfs-http-client')
+const ipfs = ipfsClient({ host: 'https://storageapi2.fleek.co/79346f15-da69-4d37-9c98-8df2ab07ed6d-bucket', port: 5001, protocol: 'https'})
+
 class App extends Component {
 	
 	constructor(props){
@@ -27,6 +31,9 @@ class App extends Component {
 	onSubmit = (event) => {
 		event.preventDefault()
 		console.log("Submitting the form...")
+		ipfs.add(this.state.buffer, (errro, result) => {
+			console.log('ipfs result', result)
+		})
 				}
 
   render() {
@@ -59,7 +66,8 @@ class App extends Component {
 					<input type='file' onChange={this.captureFile} />
 					<input type='submit' />
 				</form>
-
+				<p>&nbsp;</p>
+				<h2>Whim App</h2>
               </div>
             </main>
           </div>
