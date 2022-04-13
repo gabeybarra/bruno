@@ -4,7 +4,7 @@ import './App.css';
 
 const fleek = require('@fleekhq/fleek-storage-js')
 const ipfsClient = require('ipfs-http-client')
-const ipfs = ipfsClient({ host: 'storageapi2.fleek.co/79346f15-da69-4d37-9c98-8df2ab07ed6d-bucket'})
+//const ipfs = ipfsClient({ host: 'storageapi2.fleek.co/79346f15-da69-4d37-9c98-8df2ab07ed6d-bucket'})
 
 class App extends Component {
 	
@@ -31,8 +31,8 @@ class App extends Component {
 	onSubmit = (event) => {
 		event.preventDefault()
 		console.log("Submitting the form...")
-		ipfs.add(this.state.buffer, (errro, result) => {
-			console.log('ipfs result', result)
+		//ipfs.add(this.state.buffer, (errro, result) => {
+			//console.log('ipfs result', result)
 		})
 				}
 
