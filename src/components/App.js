@@ -33,7 +33,7 @@ class App extends Component {
 		console.log("Submitting the form...")
 		//ipfs.add(this.state.buffer, (errro, result) => {
 			//console.log('ipfs result', result)
-		})
+		//})
 				}
 
   render() {
